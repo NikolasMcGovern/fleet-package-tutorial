@@ -17,6 +17,12 @@ spec:
         name: nginx
         ports:
         - containerPort: 80
-        resources:
-          limits:
-            memory: 1
+        livenessProbe:
+          failureThreshold: 3
+          httpGet: 
+            path: /fake
+            port: 12345
+            scheme: HTTP
+          periodSeconds: 1
+          successThreshold: 1
+          timeoutSeconds: 1
