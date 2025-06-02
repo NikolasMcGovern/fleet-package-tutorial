@@ -6,11 +6,11 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nginx-v2
+      app: nginx-bad
   template:
     metadata:
       labels:
-        app: nginx-v2
+        app: nginx-bad
     spec:
       containers:
       - image: nginx:1.14.2
